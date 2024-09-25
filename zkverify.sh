@@ -13,43 +13,15 @@ sudo apt update
 sudo apt install -y git
 echo
 show "Installing Rust..."
-echo
-curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
-export RUSTUP_HOME="$HOME/.rustup"
-export CARGO_HOME="$HOME/.cargo"
-export PATH="$CARGO_HOME/bin:$PATH"
-sleep 3
-source ~/.bashrc
-
-
-echo
-show "Installing NVM..."
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
-sleep 2
-
-
-export NVM_DIR="/usr/local/share/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-source ~/.bashrc
-
-
+wget -O - https://raw.githubusercontent.com/zunxbt/installation/main/rust.sh | bash
 echo
 show "Installing Node.js..."
-echo
-nvm install node
-nvm use node
-nvm alias default node
-
-
+wget -O - https://raw.githubusercontent.com/zunxbt/installation/main/node.sh | bash
 echo
 show "Cloning zkverify-proofverification repository..."
 echo
 git clone https://github.com/0xmetaschool/zkverify-proofverification.git
 cd zkverify-proofverification
-
-
 echo
 show "Installing snarkjs..."
 echo
@@ -86,7 +58,7 @@ echo
 npm install
 
 show "Converting proof and verification keys..."
-node snarkjs2zkv convert-proof /workspaces/codespaces-blank/zkverify-proofverification/proof.json -o proof_zkv.json
-node snarkjs2zkv convert-vk /workspaces/codespaces-blank/zkverify-proofverification/verification_key.json -o verification_key_zkv.json
-node snarkjs2zkv convert-public /workspaces/codespaces-blank/zkverify-proofverification/public.json -o public_zkv.json -c bn128
+node ../snarkjs2zkv convert-proof ../proof.json -o ../proof_zkv.json && \
+node ../snarkjs2zkv convert-vk ../verification_key.json -o ../verification_key_zkv.json && \
+node ../snarkjs2zkv convert-public ../public.json -o ../public_zkv.json -c bn128
 echo
