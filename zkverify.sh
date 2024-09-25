@@ -12,9 +12,6 @@ echo
 sudo apt update
 sudo apt install -y git
 echo
-show "Installing Rust..."
-wget -O - https://raw.githubusercontent.com/zunxbt/installation/main/rust.sh | bash
-echo
 show "Installing Node.js..."
 wget -O - https://raw.githubusercontent.com/zunxbt/installation/main/node.sh | bash
 echo
@@ -37,7 +34,7 @@ cd circom
 
 echo
 show "Installing circom..."
-echo
+wget -O - https://raw.githubusercontent.com/zunxbt/installation/main/rust.sh | bash
 cargo install --path circom
 cd ..
 
