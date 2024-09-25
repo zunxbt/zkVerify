@@ -1,7 +1,7 @@
 <h2 align=center> Sending Proof to zkVerify For Verification </h2>
 
 ## Imp Info
-- This script will only work on **[Codespace](https://github.com/codespaces)**
+- This script will work on [Codespace](https://github.com/codespaces) , VPS, [Gitpod](https://gitpod.io)
 - In the middle of the code, it will ask something like this
 
 ![Screenshot 2024-09-25 134013](https://github.com/user-attachments/assets/d2820026-07ce-4994-9921-744c7b116224)
