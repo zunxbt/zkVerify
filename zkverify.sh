@@ -34,7 +34,7 @@ cd circom
 
 echo
 show "Installing circom..."
-wget -O - https://raw.githubusercontent.com/zunxbt/installation/main/rust.sh | bash
+wget -O - https://raw.githubusercontent.com/zunxbt/installation/main/rust.sh | bash && source ~/.bashrc
 cargo install --path circom
 cd ..
 
